@@ -7,6 +7,10 @@
     <title>Smart Parking System</title>
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    {{-- BoxIcons --}}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     {{-- jQuery 3.6.0 --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -73,17 +77,66 @@
                         <span class="text nav-text">Logout</span>
                     </a>
                 </li>
+            </ul>
+        </div>
     </nav>
 
+    <div class="d-flex" id="wrapper">
+        <!--Sidebar Nav-->
+        <div class="sidebar">
 
-    <div class="card custom-card mx-auto">
-        <div class="card-body custom-card-body">
-            <h1 class="card-title">Welcome to Smart Parking System</h1>
-            <p class="card-text">Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi
-                ko. Ang pogi ko.</p>
-            <a href="#" class="btn btn-dark custom-button">GET STARTED</a>
+            <i class='bx bx-menu' id="btn"></i>
+            <ul class="nav-list">
+                <li>
+                    <a href="#" class="active-dashboard">
+                        <i class='bx bxs-dashboard'></i>
+                        <span class="links-name">Dashboard</span>
+                    </a>
+                    {{-- <span class="tooltip">Dashboard</span> --}}
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="links-name">Users</span>
+                    </a>
+                    {{-- <span class="tooltip">Dashboard</span> --}}
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-car-garage'></i>
+                        <span class="links-name">Parking Slot</span>
+                    </a>
+                    {{-- <span class="tooltip">Dashboard</span> --}}
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-parking'></i>
+                        <span class="links-name">Parking</span>
+                    </a>
+                    {{-- <span class="tooltip">Dashboard</span> --}}
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-data'></i>
+                        <span class="links-name">Transaction</span>
+                    </a>
+                    {{-- <span class="tooltip">Dashboard</span> --}}
+                </li>
+            </ul>
+
         </div>
+        <!--Sidebar Nav Ends-->
     </div>
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+
+        }
+    </script>
 </body>
 
 </html>

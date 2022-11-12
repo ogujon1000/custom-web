@@ -15,10 +15,10 @@
 		background-position: 0% 50%;
 	}
 }*/
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 * {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }

@@ -36,9 +36,9 @@ class MainController extends Controller
         $save = $admin->save();
 
         if ($save) {
-            return back()->with('success', 'New User has been successfully added to database');
+            return back()->with('success', 'New User has been successfully created!');
         } else {
-            return back()->with('fail', 'Somethine went wrong, please try again later');
+            return back()->with('fail', 'Somethine went wrong, please try again later!');
         }
     }
     //Login Form checker
