@@ -74,51 +74,20 @@
         </div>
     </nav>
 
-    {{-- <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-md-center justify-content-end">
-        <a class="navbar-brand d-md-none d-inline" href="">Brand</a>
-        <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-            <ul class="navbar-nav mx-auto text-md-center text-left">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item my-auto">
-                    <a class="nav-link navbar-brand mx-0 d-none d-md-inline" href="">Brand</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
-                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-facebook mr-1"></i></a> </li>
-                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a> </li>
-            </ul>
-        </div>
-    </nav> --}}
-
     <div class="d-flex" id="wrapper">
         <!--Sidebar Nav-->
         <div class="sidebar">
             <i class='bx bx-menu' id="btn"></i>
             <ul class="nav-list">
                 <li>
-                    <a href="#" class="active-dashboard">
+                    <a href="{{ route('dashboard') }}">
                         <i class='bx bxs-dashboard'></i>
                         <span class="links-name">Dashboard</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
-                    <a href="{{ route('users') }}">
+                    <a href="#" class="active-users">
                         <i class='bx bx-user'></i>
                         <span class="links-name">Users</span>
                     </a>
@@ -157,14 +126,7 @@
         <!--Sidebar Nav Ends-->
         <div class="home-content">
             <div class="text">Dashboard</div>
-            {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In voluptate asperiores ipsam eius animi
-                dolorem sit! Assumenda ipsum beatae facere ipsam eos totam qui nesciunt cum explicabo facilis, culpa
-                expedita illum eum provident accusantium sed possimus, odit reiciendis cumque repellendus iste commodi
-                iure consequatur nostrum. Sequi nostrum natus, blanditiis harum rerum aperiam autem voluptates sunt
-                consectetur doloribus? Deserunt porro officiis quod et molestias corrupti ipsa quo libero magni numquam
-                sed id sequi corporis aliquid doloribus, asperiores voluptatibus sit perferendis iusto explicabo
-                cupiditate molestiae. Aliquid, quasi alias? Nostrum, dicta. Nisi vel neque ut architecto natus iure
-                quasi, dolore consectetur quaerat libero.</p> --}}
+
         </div>
     </div>
 

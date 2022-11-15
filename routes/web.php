@@ -31,5 +31,6 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/users/signin', [MainController::class, 'login'])->name('signin');
     Route::get('/users/signup', [MainController::class, 'register'])->name('signup');
 
-    Route::get('/admin/dashboard', [MainController::class, 'dashboard']);
+    Route::get('/admin/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
+    Route::get('/users/users', [MainController::class, 'users'])->name('users');
 });

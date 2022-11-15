@@ -18,8 +18,14 @@ class MainController extends Controller
         return view('users.signup');
     }
 
+
+    function users (){
+        return view('users.users');
+    }
+
     function save(Request $request)
     {
+
 
         //Validate requests
         $request->validate([

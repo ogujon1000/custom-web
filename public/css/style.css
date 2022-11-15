@@ -212,7 +212,10 @@ body {
     font-weight: bold;
     color: rgb(222, 111, 14);
 }
-
+.sidebar .active-users {
+    font-weight: bold;
+    color: rgb(222, 111, 14);
+}
 .sidebar #log-out {
     bottom: -350px;
     left: 0;
