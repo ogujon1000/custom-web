@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /*Background Color*/
@@ -11,18 +10,19 @@ body {
     /*background-image: url("../img/bg.png");*/
     /*background-image: linear-gradient(90deg, rgb(244, 145, 232), rgb(61, 5, 221));*/
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 /*Nav Shadow*/
 .custom-nav {
-    box-shadow: 0 .100rem .50rem rgba(0, 0, 0, 0.418) !important;
-    overflow: hidden;
-
+    box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important;
 }
+
+/*Nav Shadow*/
 
 .custom-nav img {
     width: 50px;
-    border-radius: 3px;
+    border-radius: 50px;
 }
 
 .image {
@@ -30,6 +30,18 @@ body {
     display: flex;
     align-items: center;
 }
+
+.navbar-toggler {
+    border: none;
+    float: right;
+}
+
+/* Center Toggler Items */
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+/* Center Toggler Items */
 
 /*Hover Properties*/
 #custom-park {
@@ -55,17 +67,7 @@ body {
 .image {
     min-width: 60px;
     display: flex;
-    align-items: center;
-}
-
-#logo {
-    transition: all 0.5s ease;
-}
-
-#logo:hover {
-    cursor: pointer;
-    opacity: 0.9;
-    color: rgb(11, 0, 111);
+    /* margin-left: 100px; */
 }
 
 /*Logo Properties*/
@@ -73,6 +75,10 @@ body {
 #nav-elements a {
     color: rgb(0, 0, 0);
     transition: all 0.4s ease;
+}
+
+#nav-elements {
+    justify-content: right;
 }
 
 #nav-elements a:hover {
@@ -97,20 +103,6 @@ body {
 }
 
 /*Hover Properties*/
-
-.custom-card {
-    position: static;
-    width: 100%;
-    height: auto;
-    max-width: 940px;
-    margin-top: 100px;
-    box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important;
-}
-
-.custom-card-body {
-    text-align: center;
-}
-
 .custom-button {
     color: white;
     background-color: black;
@@ -125,17 +117,25 @@ body {
 
 /*Side Navigation Properties */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 50;
-    margin-top: 10px;
     left: 0;
     height: 100%;
     width: 220px;
     background: white;
+    overflow-y: auto;
+    padding-top: 20px;
     padding: 6px 14px;
     transition: all 0.5s ease;
-    box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important;
+    box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.418);
+    /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
 }
+
+/* Hide Scrollbar but keep functionality */
+.body::-webkit-scrollbar {
+    display: none;
+}
+
 
 .sidebar.active {
     width: 78px;
@@ -157,6 +157,7 @@ body {
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .sidebar.active #btn {
@@ -206,12 +207,46 @@ body {
     border-radius: 12px;
     line-height: 50px;
 }
+
 .sidebar .active-dashboard {
     font-weight: bold;
     color: rgb(222, 111, 14);
 }
-.sidebar .active-users {
-    font-weight: bold;
-    color: rgb(222, 111, 14);
+
+.sidebar #log-out {
+    bottom: -350px;
+    left: 0;
+    position: absolute;
 }
+
 /*Side Navigation Properties Ends */
+
+/* To follow in sidebar */
+.home-content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    left: 220px;
+    transition: all 0.5s ease;
+}
+
+.home-content .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 12px;
+}
+.home-content p {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 12px;
+    text-align: center;
+}
+.sidebar.active~.home-content {
+    width: calc(100% - 78px);
+    left: 78px;
+}
+.sidebar.active~#custom-park {
+    width: calc(100% - 78px);
+    left: 240px;
+}
+/* To follow in sidebar */
