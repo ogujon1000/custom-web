@@ -43,7 +43,7 @@
                                 </div>
                             @endif
                             @csrf
-                            <div class="mb-md-5 mt-md-4 pb-5">
+                            <div class="mb-md-5 mt-md-4">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-dark-50 mb-5">Please enter your Email and Password!</p>
@@ -89,6 +89,12 @@
                                 <p class="mb-0">Don't have an account? <a href="{{ route('signup') }}"
                                         class="text-dark-50 fw-bold">Sign Up</a>
                                 </p>
+                            </div>
+
+                            <div>
+                                <a href="{{ route('dashboard') }}" class="text-dark">
+                                    <i class="fa-solid fa-home icon"></i>
+                                </a>
                             </div>
                         </form>
                     </div>

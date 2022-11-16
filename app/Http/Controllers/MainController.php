@@ -19,10 +19,15 @@ class MainController extends Controller
     }
 
 
-    function users (){
+    function users()
+    {
         return view('users.users');
     }
 
+    function landing()
+    {
+        return view('layout.landing');
+    }
     function save(Request $request)
     {
 

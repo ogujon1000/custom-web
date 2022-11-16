@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Background Color*/
+body {
+    /*background-image: url("../img/bg.png");*/
+    /* background-image: linear-gradient(90deg, rgb(244, 145, 232), rgb(61, 5, 221)); */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 8s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/*Nav Shadow*/
+.custom-nav {
+    box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important;
+    /* border-bottom: 0.0625rem solid #e0e0e0; */
+    background: #ffffff;
+}
+
+/*Nav Shadow*/
+
+.custom-nav img {
+    width: 50px;
+    border-radius: 50px;
+}
+
+.image {
+    min-width: auto;
+    display: flex;
+    align-items: center;
+}
+.image-text img {
+    width: 100px;
+    border-radius: 6px;
+}
+
+.image {
+    min-width: 60px;
+    display: flex;
+}
+
+.navbar-toggler {
+    border: none;
+    float: right;
+}
+#nav-elements a {
+    color: rgb(0, 0, 0);
+    transition: all 0.4s ease;
+}
+
+#nav-elements {
+    justify-content: right;
+}
+
+#nav-elements a:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: rgb(222, 111, 14);
+}
+/* Center Toggler Items */
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+#custom-park {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: all 0.5s ease;
+}
+#custom-park:hover {
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.9;
+    color: rgb(222, 111, 14);
+}
+.custom-card {
+    margin-top: 2rem;
+    width: 50rem;
+}
+.custom-card-body {
+    text-align: center;
+    box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important;
+}

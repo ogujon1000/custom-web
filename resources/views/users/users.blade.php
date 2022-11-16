@@ -4,7 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Parking System</title>
+
+    {{-- Icon Tab --}}
+    <link rel="icon" href="/img/logo.png">
+
+    <title>Smart Parking</title>
+
+    <link rel="icon" type="image/png" href="/img/favicon.ico" sizes="16x16">
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -37,7 +43,7 @@
 
 <body>
     <!--Nav-->
-    <nav class="navbar navbar-light navbar-expand-lg bg-light  justify-content-md-center custom-nav">
+    <nav class="navbar navbar-light navbar-expand-lg justify-content-md-center custom-nav">
         <span class="image">
             <a href="#">
                 <img src="{{ asset('img/logo.png') }}" id="image-text">
@@ -52,7 +58,7 @@
         <div class="collapse navbar-collapse" id="nav-elements">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('landing') }}">
                         <i class="fa-solid fa-home icon"></i>
                         Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -125,7 +131,18 @@
         </div>
         <!--Sidebar Nav Ends-->
         <div class="home-content">
-            <div class="text">Dashboard</div>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb custom-crumbs">
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Users</li>
+                    <li class="breadcrumb-item"><a href="#">Parking Slot</a></li>
+                    <li class="breadcrumb-item"><a href="#">Parking</a></li>
+                    <li class="breadcrumb-item"><a href="#">Transaction</a></li>
+                </ol>
+            </nav>
+
+            {{-- <div class="text">Users</div> --}}
 
         </div>
     </div>

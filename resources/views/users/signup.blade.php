@@ -51,7 +51,7 @@
                             @endif
 
                             @csrf
-                            <div class="mb-md-5 mt-md-4 pb-5">
+                            <div class="mb-md-5 mt-md-4">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
                                 &nbsp;

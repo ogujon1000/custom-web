@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Parking System</title>
+
+    {{-- Icon Tab --}}
+    <link rel="icon" href="/img/logo.png">
+
+    <title>Smart Parking</title>
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -37,7 +41,7 @@
 
 <body>
     <!--Nav-->
-    <nav class="navbar navbar-light navbar-expand-lg bg-light  justify-content-md-center custom-nav">
+    <nav class="navbar navbar-light navbar-expand-lg justify-content-md-center custom-nav">
         <span class="image">
             <a href="#">
                 <img src="{{ asset('img/logo.png') }}" id="image-text">
@@ -52,7 +56,7 @@
         <div class="collapse navbar-collapse" id="nav-elements">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('landing') }}">
                         <i class="fa-solid fa-home icon"></i>
                         Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -112,59 +116,72 @@
             <ul class="nav-list">
                 <li>
                     <a href="#" class="active-dashboard">
-                        <i class='bx bxs-dashboard'></i>
-                        <span class="links-name">Dashboard</span>
+                        <i class='bx bxs-dashboard' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Dashboard">Dashboard</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="{{ route('users') }}">
-                        <i class='bx bx-user'></i>
-                        <span class="links-name">Users</span>
+                        <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Users">Users</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bxs-car-garage'></i>
-                        <span class="links-name">Parking Slot</span>
+                        <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
+                            title="Parking Slot"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Parking Slot">Parking
+                            Slot</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bxs-parking'></i>
-                        <span class="links-name">Parking</span>
+                        <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Parking"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Parking">Parking</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bx-data'></i>
-                        <span class="links-name">Transaction</span>
+                        <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Transaction"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Transaction">Transaction</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="{{ route('logout') }}" id="log-out">
-                        <i class='bx bx-log-out'></i>
-                        <span class="links-name">Logout</span>
+                        <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Logout">Logout</span>
                     </a>
                     {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
+
         <div class="home-content">
-            <div class="text">Dashboard</div>
-            {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In voluptate asperiores ipsam eius animi
-                dolorem sit! Assumenda ipsum beatae facere ipsam eos totam qui nesciunt cum explicabo facilis, culpa
-                expedita illum eum provident accusantium sed possimus, odit reiciendis cumque repellendus iste commodi
-                iure consequatur nostrum. Sequi nostrum natus, blanditiis harum rerum aperiam autem voluptates sunt
-                consectetur doloribus? Deserunt porro officiis quod et molestias corrupti ipsa quo libero magni numquam
-                sed id sequi corporis aliquid doloribus, asperiores voluptatibus sit perferendis iusto explicabo
-                cupiditate molestiae. Aliquid, quasi alias? Nostrum, dicta. Nisi vel neque ut architecto natus iure
-                quasi, dolore consectetur quaerat libero.</p> --}}
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb custom-crumbs">
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="#">Users</a></li>
+                    <li class="breadcrumb-item"><a href="#">Parking Slot</a></li>
+                    <li class="breadcrumb-item"><a href="#">Parking</a></li>
+                    <li class="breadcrumb-item"><a href="#">Transaction</a></li>
+                </ol>
+            </nav>
+
+
+            {{-- <div class="text">Dashboard</div> --}}
+
         </div>
     </div>
 
@@ -179,6 +196,9 @@
             sidebar.classList.toggle("active");
 
         } //Dashboard Toggler
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 

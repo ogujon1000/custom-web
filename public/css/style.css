@@ -15,7 +15,8 @@ body {
 
 /*Nav Shadow*/
 .custom-nav {
-    box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important;
+    /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
+    border-bottom: 0.0625rem solid #e0e0e0;
 }
 
 /*Nav Shadow*/
@@ -39,24 +40,15 @@ body {
 /* Center Toggler Items */
 .navbar .navbar-collapse {
     text-align: center;
-}
+}/* Center Toggler Items */
 
-/* Center Toggler Items */
-
-/*Hover Properties*/
-#custom-park {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 1.3rem;
-    transition: all 0.5s ease;
+/* home content properties */
+.custom-crumbs {
+    font-size: medium;
+    background-color: unset!important;
+    justify-content: end;
 }
-
-#custom-park:hover {
-    font-weight: bold;
-    cursor: pointer;
-    opacity: 0.9;
-    color: rgb(222, 111, 14);
-}
+/* home content properties */
 
 /*Logo Properties*/
 .image-text img {
@@ -103,6 +95,19 @@ body {
 }
 
 /*Hover Properties*/
+#custom-park {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: all 0.5s ease;
+}
+#custom-park:hover {
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.9;
+    color: rgb(222, 111, 14);
+}
+
 .custom-button {
     color: white;
     background-color: black;
@@ -126,12 +131,10 @@ body {
     padding-top: 20px;
     padding: 6px 14px;
     transition: all 0.5s ease;
-    box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.418);
+    border-right: 0.0625rem solid #e0e0e0;
+    /* box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.418); */
     /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
 }
-
-/* Hide Scrollbar but keep functionality */
-
 
 .sidebar.active {
     width: 78px;
@@ -189,7 +192,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: all 0.5 ease;
+    transition: all 0.5s ease;
     white-space: nowrap;
 }
 
@@ -213,7 +216,7 @@ body {
     color: rgb(222, 111, 14);
 }
 .sidebar #log-out {
-    bottom: -350px;
+    bottom: -300px;
     left: 0;
     position: absolute;
 }
@@ -233,19 +236,19 @@ body {
     font-size: 25px;
     font-weight: 500;
     margin: 12px;
+    margin-top: -10px;
 }
-.home-content p {
+.home-content .home-card {
     font-size: 20px;
     font-weight: 500;
     margin: 12px;
-    text-align: center;
 }
 .sidebar.active~.home-content {
     width: calc(100% - 78px);
     left: 78px;
 }
-.sidebar.active~#custom-park {
+.sidebar.active~.home-card {
     width: calc(100% - 78px);
-    left: 240px;
+    left: 78px;
 }
 /* To follow in sidebar */

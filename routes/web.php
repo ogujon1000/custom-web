@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 //Default Route
 Route::get('/', function () {
-    return view('users.signin');
-})->name('signin');
+    return view('layout.landing');
+})->name('landing');
 
 Route::post('/users/save', [MainController::class, 'save'])->name('save');
 Route::post('/users/check', [MainController::class, 'check'])->name('check');
@@ -33,4 +33,5 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
     Route::get('/admin/dashboard', [MainController::class, 'dashboard'])->name('dashboard');
     Route::get('/users/users', [MainController::class, 'users'])->name('users');
+    Route::get('/layout/landing', [MainController::class, 'landing'])->name('landing');
 });
