@@ -84,7 +84,7 @@
             <h1 class="card-title">Welcome to Smart Parking System</h1>
             <p class="card-text">Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi ko. Ang pogi
                 ko. Ang pogi ko.</p>
-            <a href="{{ route('dashboard') }}" class="btn btn-dark custom-button">GET STARTED</a>
+            <a href="{{ route('signin') }}" class="btn btn-dark custom-button">GET STARTED</a>
         </div>
     </div>
 </body>

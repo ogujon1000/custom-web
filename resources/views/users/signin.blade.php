@@ -36,13 +36,13 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card text-dark custom-login">
                     <div class="card-body p-5 text-center">
-                        <form action="{{ route('check') }}" method="post">
+                        {{-- <form action="{{ route('check') }}" method="post">
                             @if (Session::get('fail'))
                                 <div class="alert alert-danger">
                                     {{ Session::get('fail') }}
                                 </div>
                             @endif
-                            @csrf
+                            @csrf --}}
                             <div class="mb-md-5 mt-md-4">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
@@ -96,7 +96,7 @@
                                     <i class="fa-solid fa-home icon"></i>
                                 </a>
                             </div>
-                        </form>
+                        {{-- </form> --}}
                     </div>
                 </div>
             </div>

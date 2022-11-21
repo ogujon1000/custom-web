@@ -93,7 +93,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="active-category">
+                    <a href="{{ route('users') }}">
                         <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Vehicle Category">Vehicle
@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('slot') }}">
+                    <a href="#" class="active-slot">
                         <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right" title="Parking Slot"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right" title="Parking Slot">Parking
                             Slot</span>
@@ -133,16 +133,16 @@
         <!--Sidebar Nav Ends-->
         <div class="home-content">
 
-            <div class="text">Vehicle Categories
+            <div class="text">Manage Slot
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#form">
-                    Add Vehicle Category
+                    Add Slot
             </div>
             <div class="modal fade" id="form" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header border-bottom-0">
-                            <h5 class="modal-title" id="exampleModalLabel">Add New Vehicle Category</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Add Slot</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -150,9 +150,15 @@
                         <form>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="category">Category Name</label>
-                                    <input type="text" class="form-control" id="category1"
+                                    <label for="slot">Slot Name</label>
+                                    <input type="text" class="form-control" id="slot1"
                                         aria-describedby="emailHelp" placeholder="Enter here">
+                                </div>
+                                <div class="form-group">
+                                    <label for="slot">Status</label>
+                                    <select>
+                                        <option value="active">Active</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>

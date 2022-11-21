@@ -14,14 +14,14 @@ class AuthCheck
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if(!session()->has('LoggedUser') && ($request->path() !='users/signin' && $request->path() !='users/signup')){
-            return redirect('users/signin')->with('fail','You must be logged in!');
-        }
-        if(session()->has('LoggedUser') && ($request->path() == 'users/signin' || $request->path() == 'users/signup')){
-            return back();
-        }
-        return $next($request);
-    }
+    // public function handle(Request $request, Closure $next)
+    // {
+    //     if(!session()->has('LoggedUser') && ($request->path() !='users/signin' && $request->path() !='users/signup')){
+    //         return redirect('users/signin')->with('fail','You must be logged in!');
+    //     }
+    //     if(session()->has('LoggedUser') && ($request->path() == 'users/signin' || $request->path() == 'users/signup')){
+    //         return back();
+    //     }
+    //     return $next($request);
+    // }
 }

@@ -40,14 +40,17 @@ body {
 /* Center Toggler Items */
 .navbar .navbar-collapse {
     text-align: center;
-}/* Center Toggler Items */
+}
+
+/* Center Toggler Items */
 
 /* home content properties */
 .custom-crumbs {
     font-size: medium;
-    background-color: unset!important;
+    background-color: unset !important;
     justify-content: end;
 }
+
 /* home content properties */
 
 /*Logo Properties*/
@@ -101,6 +104,7 @@ body {
     font-size: 1.3rem;
     transition: all 0.5s ease;
 }
+
 #custom-park:hover {
     font-weight: bold;
     cursor: pointer;
@@ -207,14 +211,23 @@ body {
     line-height: 50px;
 }
 
+/* Active links */
 .sidebar .active-dashboard {
     font-weight: bold;
     color: rgb(222, 111, 14);
 }
-.sidebar .active-users {
+
+.sidebar .active-category {
     font-weight: bold;
     color: rgb(222, 111, 14);
 }
+
+.sidebar .active-slot {
+    font-weight: bold;
+    color: rgb(222, 111, 14);
+}
+/* Active links */
+
 .sidebar #log-out {
     bottom: -300px;
     left: 0;
@@ -236,19 +249,60 @@ body {
     font-size: 25px;
     font-weight: 500;
     margin: 12px;
-    margin-top: -10px;
+    margin-top: 10px;
 }
+
 .home-content .home-card {
     font-size: 20px;
     font-weight: 500;
     margin: 12px;
 }
+
 .sidebar.active~.home-content {
     width: calc(100% - 78px);
     left: 78px;
 }
+
 .sidebar.active~.home-card {
     width: calc(100% - 78px);
     left: 78px;
 }
+
 /* To follow in sidebar */
+
+/* Dashboard Content */
+/* .no-padding {
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.panel-widget {
+    padding: 10px 0;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    text-align: center;
+    color: #333;
+} */
+
+/* Icon Colors */
+#icon-1 {
+    color: rgb(255, 162, 0);
+    font-size: 25px;
+}
+#icon-2 {
+    color: rgb(217, 0, 255);
+    font-size: 25px;
+}#icon-3 {
+    color: rgb(0, 224, 217);
+    font-size: 25px;
+}#icon-4 {
+    color: red;
+    font-size: 25px;
+}

@@ -120,25 +120,22 @@
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Dashboard">Dashboard</span>
                     </a>
-                    {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="{{ route('users') }}">
-                        <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Users">Users</span>
+                            title="Vehicle Category">Vehicle Category</span>
                     </a>
-                    {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('slot') }}">
                         <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
                             title="Parking Slot"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Parking Slot">Parking
                             Slot</span>
                     </a>
-                    {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="#">
@@ -146,7 +143,6 @@
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Parking">Parking</span>
                     </a>
-                    {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
                     <a href="#">
@@ -154,22 +150,20 @@
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Transaction">Transaction</span>
                     </a>
-                    {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}" id="log-out">
+                    <a href="#" id="log-out">
                         <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Logout">Logout</span>
                     </a>
-                    {{-- <span class="tooltip">Dashboard</span> --}}
                 </li>
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
 
         <div class="home-content">
-            <nav aria-label="breadcrumb">
+            {{-- <nav aria-label="breadcrumb">
                 <ol class="breadcrumb custom-crumbs">
                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                     <li class="breadcrumb-item"><a href="#">Users</a></li>
@@ -177,11 +171,61 @@
                     <li class="breadcrumb-item"><a href="#">Parking</a></li>
                     <li class="breadcrumb-item"><a href="#">Transaction</a></li>
                 </ol>
-            </nav>
+            </nav> --}}
 
 
-            {{-- <div class="text">Dashboard</div> --}}
-
+            <div class="text">Dashboard</div>
+            {{-- <div class="row">
+                <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+                    <div class="panel panel-teal panel-widget border-right">
+                        <div class="row no-padding">
+                            <em class="fa fa-xl fa-car color-blue"></em>
+                            <div class="large">21</div>
+                            <div class="text-muted">Total Vehicles Parked</div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="container-fluid px-4">
+                <div class="row g-3 my-2">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">0</h3>
+                                <p class="fs-5">Total Vehicles Parked</p>
+                            </div>
+                            <i class="fa fa-car" id="icon-1"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">0</h3>
+                                <p class="fs-5">Vehicles In</p>
+                            </div>
+                            <i class="fa fa-toggle-on" id="icon-2"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">0</h3>
+                                <p class="fs-5">Vehicles Out</p>
+                            </div>
+                            <i class="fa fa-toggle-off" id="icon-3"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">0</h3>
+                                <p class="fs-5">Parking Done Within 24 HRS</p>
+                            </div>
+                            <i class="fa fa-clock-o" id="icon-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
