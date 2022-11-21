@@ -102,8 +102,10 @@
                 </li>
                 <li>
                     <a href="{{ route('slot') }}">
-                        <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right" title="Parking Slot"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right" title="Parking Slot">Parking
+                        <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
+                            title="Parking Slot"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Parking Slot">Parking
                             Slot</span>
                     </a>
                 </li>
@@ -160,6 +162,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card text-category">
+                <p>Manage Category</p>
+                <div class="card-body">
+
+                </div>
+            </div>
+
         </div>
 
 

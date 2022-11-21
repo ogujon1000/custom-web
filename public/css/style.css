@@ -267,7 +267,12 @@ body {
     width: calc(100% - 78px);
     left: 78px;
 }
-
+.home-content .text-category {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 12px;
+    margin-top: 10px;
+}
 /* To follow in sidebar */
 
 /* Dashboard Content */
