@@ -223,6 +223,10 @@ body {
     font-weight: bold;
     color: rgb(222, 111, 14);
 }
+.sidebar .active-parking {
+    font-weight: bold;
+    color: rgb(222, 111, 14);
+}
 
 /* Active links */
 

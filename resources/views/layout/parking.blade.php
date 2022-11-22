@@ -9,8 +9,6 @@
     <link rel="icon" href="/img/logo.png">
 
     <title>Smart Parking</title>
-
-    <link rel="icon" type="image/png" href="/img/favicon.ico" sizes="16x16">
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -93,11 +91,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('category') }}" class="active-category">
+                    <a href="{{ route('category') }}">
                         <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Vehicle Category">Vehicle
-                            Category</span>
+                            title="Vehicle Category">Vehicle Category</span>
                     </a>
                 </li>
                 <li>
@@ -110,17 +107,17 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('parking') }}">
-                        <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                    <a href="{{ route('parking') }}" class="active-parking">
+                        <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Parking"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Dashboard">Parking</span>
+                            title="Parking">Parking</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Transaction"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Dashboard">Transaction</span>
+                            title="Transaction">Transaction</span>
                     </a>
                 </li>
                 <li>
@@ -134,83 +131,35 @@
         </div>
         <!--Sidebar Nav Ends-->
 
-        {{-- Home Contents --}}
         <div class="home-content">
 
-            <div class="text">Vehicle Categories
-                <button type="button" class="btn btn-outline-info btn-sm font-weight-bold" data-toggle="modal"
-                    data-target="#form">
-                    Add Vehicle Category
-            </div>
+            <div class="text">Manage Parking</div>
 
-            {{-- Modal Properties --}}
-            <div class="modal fade" id="form" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header border-bottom-0">
-                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Add New Vehicle Category
-                            </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <form>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="brand">Select Brand Name:</label>
-                                    <select class="form-control" id="brand">
-                                        <option value="" disabled selected>Select here</option>
-                                        <option>Toyota</option>
-                                        <option>Suzuki</option>
-                                        <option>Kia Motors</option>
-                                        <option>Mitsubishi Motors</option>
-                                        <option>Hyundai</option>
-                                        <option>Others</option>
-                                    </select>
-                                    <br>
-                                    <label for="type">Vehicle Type:</label>
-                                    <select class="form-control" id="type">
-                                        <option value="" disabled selected>Select here</option>
-                                        <option>Bicycle</option>
-                                        <option>Motorcycle</option>
-                                        <option>Motor Scooter</option>
-                                        <option>Micro</option>
-                                        <option>Sedan</option>
-                                        <option>VAN</option>
-                                        <option>SUV</option>
-                                        <option>Truck</option>
-                                        <option>Others</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            {{-- End of Modal Properties --}}
-
-
-            {{-- Menu Contents --}}
             <div class="card custom-card">
-                <p class="custom-text">Manage Category</p>
+                <p class="custom-text">Manage Parking</p>
                 <div class="card-body">
 
                     {{-- Table Contents --}}
                     <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Brand Name</th>
-                                <th scope="col">Vehicle Type</th>
-                                <th scope="col">Actions</th>
+                                <th style="width: 12%">Parking Code</th>
+                                <th style="width: 15%">Check-in</th>
+                                <th>Check-out</th>
+                                <th style="width: 15%">Vehicle Type</th>
+                                <th>Rate</th>
+                                <th>Slot</th>
+                                <th style="width: 13%">Payment Status</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th>1</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -230,26 +179,24 @@
 
                 </div>
             </div>
-            {{-- End of Menu Contents! --}}
-
         </div>
-        {{-- End of Home Contents --}}
+    </div>
 
 
 
-        <script>
-            //Dashboard Toggler
-            let btn = document.querySelector("#btn");
-            let sidebar = document.querySelector(".sidebar");
+    <script>
+        //Dashboard Toggler
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
 
-            btn.onclick = function() {
-                sidebar.classList.toggle("active");
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
 
-            } //Dashboard Toggler
-            $(function() {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-        </script>
+        } //Dashboard Toggler
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 
 </html>

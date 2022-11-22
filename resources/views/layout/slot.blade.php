@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('parking') }}">
                         <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Dashboard">Parking</span>
@@ -177,24 +177,24 @@
 
             {{-- Menu Card --}}
             <div class="card custom-card">
-                {{-- <p class="custom-text">Manage Category</p> --}}
+                <p class="custom-text">Manage Slot</p>
                 <div class="card-body">
 
                     {{-- Table Contents --}}
                     <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Slot Name</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Actions</th>
+                                <th>#</th>
+                                <th>Slot Name</th>
+                                <th>Status</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Parking 1</td>
-                                <td class="font-weight-bold text-success">Active</td>
+                                <td></td>
+                                <td class="font-weight-bold text-success"></td>
                                 <td>
                                     <button type="button" class="btn btn-outline-success btn-sm"
                                         data-toggle="tooltip" data-placement="right" title="Edit">

@@ -78,37 +78,6 @@
         </div>
     </nav>
 
-    {{-- <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-md-center justify-content-end">
-        <a class="navbar-brand d-md-none d-inline" href="">Brand</a>
-        <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-            <ul class="navbar-nav mx-auto text-md-center text-left">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item my-auto">
-                    <a class="nav-link navbar-brand mx-0 d-none d-md-inline" href="">Brand</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
-                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-facebook mr-1"></i></a> </li>
-                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a> </li>
-            </ul>
-        </div>
-    </nav> --}}
-
     <div class="d-flex" id="wrapper">
         <!--Sidebar Nav-->
         <div class="sidebar">
@@ -138,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('parking') }}">
                         <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Parking"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Parking">Parking</span>

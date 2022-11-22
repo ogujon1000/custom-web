@@ -39,6 +39,10 @@ Route::get('/layout/slot', function(){
     return view('layout.slot');
 })->name('slot');
 
+Route::get('/layout/parking', function(){
+    return view('layout.parking');
+})->name('parking');
+
 // Route::post('/users/save', [MainController::class, 'save'])->name('save');
 // Route::post('/users/check', [MainController::class, 'check'])->name('check');
 
