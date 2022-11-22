@@ -19,8 +19,8 @@ Route::get('/', function () {
     return view('layout.landing');
 })->name('landing');
 
-Route::get('/admin/dashboard', function(){
-    return view('admin.dashboard');
+Route::get('/layout/dashboard', function(){
+    return view('layout.dashboard');
 })->name('dashboard');
 
 Route::get('/users/signin', function(){
@@ -31,9 +31,9 @@ Route::get('/users/signup', function(){
     return view('users.signup');
 })->name('signup');
 
-Route::get('/users/users', function(){
-    return view('users.users');
-})->name('users');
+Route::get('/layout/category', function(){
+    return view('layout.category');
+})->name('category');
 
 Route::get('/layout/slot', function(){
     return view('layout.slot');

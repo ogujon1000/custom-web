@@ -43,39 +43,6 @@
             </a>
         </span>
         <a class="navbar-brand" href="#" id="custom-park">Smart Parking System</a>
-
-        {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-elements"
-            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> --}}
-
-        {{-- <div class="collapse navbar-collapse" id="nav-elements">
-            <ul class="navbar-nav mr-auto flex-fill w-100 justify-content-end">
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{ route('landing') }}">
-                        <i class="fa-solid fa-home icon"></i>
-                        Home <span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa fa-users"></i>
-                        <span class="text nav-text">About Us</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-sharp fa-solid fa-phone icon"></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">
-                        <i class="fa fa-sign-out"></i>
-                        <span class="text nav-text">Logout</span>
-                    </a>
-                </li> --}}
     </nav>
 
 

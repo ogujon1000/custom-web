@@ -17,6 +17,7 @@ body {
 .custom-nav {
     /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
     border-bottom: 0.0625rem solid #e0e0e0;
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4); */
 }
 
 /*Nav Shadow*/
@@ -45,11 +46,7 @@ body {
 /* Center Toggler Items */
 
 /* home content properties */
-.custom-crumbs {
-    font-size: medium;
-    background-color: unset !important;
-    justify-content: end;
-}
+
 
 /* home content properties */
 
@@ -226,6 +223,7 @@ body {
     font-weight: bold;
     color: rgb(222, 111, 14);
 }
+
 /* Active links */
 
 .sidebar #log-out {
@@ -267,47 +265,50 @@ body {
     width: calc(100% - 78px);
     left: 78px;
 }
-.home-content .text-category {
-    font-size: 25px;
-    font-weight: 500;
+
+.home-content .custom-card {
     margin: 12px;
     margin-top: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
 }
+
+.home-content .custom-text {
+    font-size: large;
+    font-weight: bold;
+    margin: 10px;
+    margin-top: 5px;
+}
+
 /* To follow in sidebar */
 
 /* Dashboard Content */
-/* .no-padding {
-    padding: 0;
-    margin: 0;
+.dash-card {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
 }
-
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.panel-widget {
-    padding: 10px 0;
-    position: relative;
-    box-shadow: none;
-    border-radius: 0;
-    background: none;
-    text-align: center;
-    color: #333;
-} */
 
 /* Icon Colors */
 #icon-1 {
     color: rgb(255, 162, 0);
     font-size: 25px;
 }
+
 #icon-2 {
     color: rgb(217, 0, 255);
     font-size: 25px;
-}#icon-3 {
+}
+
+#icon-3 {
     color: rgb(0, 224, 217);
     font-size: 25px;
-}#icon-4 {
+}
+
+#icon-4 {
     color: red;
     font-size: 25px;
+}
+
+/* table properties */
+td {
+    padding: 9px 5px;
 }

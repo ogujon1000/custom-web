@@ -93,7 +93,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('users') }}">
+                    <a href="{{ route('category') }}">
                         <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Vehicle Category">Vehicle
@@ -101,9 +101,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="active-slot">
-                        <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right" title="Parking Slot"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right" title="Parking Slot">Parking
+                    <a href="{{ route('slot') }}" class="active-slot">
+                        <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
+                            title="Parking Slot"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Parking Slot">Parking
                             Slot</span>
                     </a>
                 </li>
@@ -131,18 +133,23 @@
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
+
+        {{-- Home Contents --}}
         <div class="home-content">
 
             <div class="text">Manage Slot
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#form">
+                <button type="button" class="btn btn-outline-danger btn-sm font-weight-bold" data-toggle="modal"
+                    data-target="#form">
                     Add Slot
             </div>
+
+            {{-- Modal Properties --}}
             <div class="modal fade" id="form" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header border-bottom-0">
-                            <h5 class="modal-title" id="exampleModalLabel">Add Slot</h5>
+                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Add Slot</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -150,14 +157,14 @@
                         <form>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="slot">Slot Name</label>
+                                    <label for="slotName">Slot Name:</label>
                                     <input type="text" class="form-control" id="slot1"
                                         aria-describedby="emailHelp" placeholder="Enter here">
                                 </div>
                                 <div class="form-group">
-                                    <label for="slot">Status</label>
-                                    <select>
-                                        <option value="active">Active</option>
+                                    <label for="status">Status:</label>
+                                    <select class="form-control" id="status">
+                                        <option value="" disabled selected>Active</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-success">Submit</button>
@@ -166,8 +173,49 @@
                     </div>
                 </div>
             </div>
-        </div>
+            {{-- End of Modal Properties --}}
 
+            {{-- Menu Card --}}
+            <div class="card custom-card">
+                {{-- <p class="custom-text">Manage Category</p> --}}
+                <div class="card-body">
+
+                    {{-- Table Contents --}}
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Slot Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Parking 1</td>
+                                <td class="font-weight-bold text-success">Active</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm"
+                                        data-toggle="tooltip" data-placement="right" title="Edit">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm"
+                                        data-toggle="tooltip" data-placement="right" title="Delete">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{-- End of Table Contents --}}
+
+                </div>
+            </div>
+            {{-- End of Menu Card --}}
+
+        </div>
+        {{-- End of Home Contents --}}
 
 
         <script>

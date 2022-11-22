@@ -93,7 +93,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="active-category">
+                    <a href="{{ route('category') }}" class="active-category">
                         <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Vehicle Category">Vehicle
@@ -133,28 +133,56 @@
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
+
+        {{-- Home Contents --}}
         <div class="home-content">
 
             <div class="text">Vehicle Categories
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#form">
+                <button type="button" class="btn btn-outline-info btn-sm font-weight-bold" data-toggle="modal"
+                    data-target="#form">
                     Add Vehicle Category
             </div>
+
+            {{-- Modal Properties --}}
             <div class="modal fade" id="form" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header border-bottom-0">
-                            <h5 class="modal-title" id="exampleModalLabel">Add New Vehicle Category</h5>
+                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Add New Vehicle Category
+                            </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+
                         <form>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="category">Category Name</label>
-                                    <input type="text" class="form-control" id="category1"
-                                        aria-describedby="emailHelp" placeholder="Enter here">
+                                    <label for="brand">Select Brand Name:</label>
+                                    <select class="form-control" id="brand">
+                                        <option value="" disabled selected>Select here</option>
+                                        <option>Toyota</option>
+                                        <option>Suzuki</option>
+                                        <option>Kia Motors</option>
+                                        <option>Mitsubishi Motors</option>
+                                        <option>Hyundai</option>
+                                        <option>Others</option>
+                                    </select>
+                                    <br>
+                                    <label for="type">Vehicle Type:</label>
+                                    <select class="form-control" id="type">
+                                        <option value="" disabled selected>Select here</option>
+                                        <option>Bicycle</option>
+                                        <option>Motorcycle</option>
+                                        <option>Motor Scooter</option>
+                                        <option>Micro</option>
+                                        <option>Sedan</option>
+                                        <option>VAN</option>
+                                        <option>SUV</option>
+                                        <option>Truck</option>
+                                        <option>Others</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>
@@ -162,15 +190,50 @@
                     </div>
                 </div>
             </div>
+            {{-- End of Modal Properties --}}
 
-            <div class="card text-category">
-                <p>Manage Category</p>
+
+            {{-- Menu Contents --}}
+            <div class="card custom-card">
+                <p class="custom-text">Manage Category</p>
                 <div class="card-body">
+
+                    {{-- Table Contents --}}
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Brand Name</th>
+                                <th scope="col">Vehicle Type</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Kawasaki Itchigo</td>
+                                <td>Motorcycle</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm"
+                                        data-toggle="tooltip" data-placement="right" title="Edit">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm"
+                                        data-toggle="tooltip" data-placement="right" title="Delete">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{-- End of Table Contents --}}
 
                 </div>
             </div>
+            {{-- End of Menu Contents! --}}
 
         </div>
+        {{-- End of Home Contents --}}
 
 
 
@@ -183,6 +246,9 @@
                 sidebar.classList.toggle("active");
 
             } //Dashboard Toggler
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
 </body>
 
