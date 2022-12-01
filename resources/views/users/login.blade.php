@@ -36,67 +36,52 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card text-dark custom-login">
                     <div class="card-body p-5 text-center">
-                        {{-- <form action="{{ route('check') }}" method="post">
+                        <span class="image">
+                            <img src="{{ asset('img/logo.png') }}" class="image-text">
+                        </span>
+                        <p id="custom-park">Smart Parking System</p>
+                        <form method="POST" action="{{ route('check') }}">
                             @if (Session::get('fail'))
                                 <div class="alert alert-danger">
                                     {{ Session::get('fail') }}
                                 </div>
                             @endif
-                            @csrf --}}
+                            @csrf
                             <div class="mb-md-5 mt-md-4">
-
-                                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                                <p class="text-dark-50 mb-5">Please enter your Email and Password!</p>
+                                {{-- <h2 class="fw-bold mb-2 text-uppercase">Login</h2> --}}
+                                {{-- <p class="text-dark-50 mb-5">Please enter your Email and Password!</p> --}}
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="email">Email</label>
                                     <input type="email" class="form-control form-control-lg" name="email"
                                         value="{{ old('email') }}" />
-                                    {{-- <span class="text-danger">
+                                    <span class="text-danger">
                                         @error('email')
                                             {{ $message }}
                                         @enderror
-                                    </span> --}}
+                                    </span>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="password">Password</label>
                                     <input type="password" class="form-control form-control-lg" name="password"
-                                        value="{{ old('password') }}">
-                                    {{-- <span class="text-danger">
+                                        value="{{ old('password') }}" />
+                                    <span class="text-danger">
                                         @error('password')
                                             {{ $message }}
                                         @enderror
-                                    </span> --}}
+                                    </span>
                                 </div>
-
-                                <p class="small mb-5 pb-lg-2"><a class="text-dark-50" href="#!">Forgot
-                                        password?</a>
-                                </p>
-
-                                <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
-
-                                {{-- <div class="d-flex justify-content-center text-center mt-2 pt-1">
-                                    <a href="#!" class="text-dark"><i class="fab fa-facebook-f fa-lg"></i></a>
-                                    <a href="#!" class="text-dark"><i
-                                            class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                                    <a href="#!" class="text-dark"><i class="fab fa-google fa-lg"></i></a>
-                                </div> --}}
-
+                                    <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
                             </div>
 
                             <div>
-                                <p class="mb-0">Don't have an account? <a href="{{ route('signup') }}"
+                                <p class="mb-0">Don't have an account? <a href="{{ route('register') }}"
                                         class="text-dark-50 fw-bold">Sign Up</a>
                                 </p>
                             </div>
                             <br>
-                            <div>
-                                <a href="{{ route('dashboard') }}" class="text-dark">
-                                    <i class="fa-solid fa-home icon"></i>
-                                </a>
-                            </div>
-                        {{-- </form> --}}
+                        </form>
                     </div>
                 </div>
             </div>

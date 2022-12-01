@@ -4,6 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- DataTables --}}
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.1/af-2.5.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/cr-1.6.1/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.1/af-2.5.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/cr-1.6.1/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/datatables.min.js">
+    </script>
+    {{-- DataTables --}}
 
     {{-- Icon Tab --}}
     <link rel="icon" href="/img/logo.png">
@@ -84,7 +94,7 @@
             <i class='bx bx-menu' id="btn"></i>
             <ul class="nav-list">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="active-dashboard">
+                    <a href="{{ route('dashboard') }}">
                         <i class='bx bxs-bar-chart-square' data-toggle="tooltip" data-placement="right"
                             title="Dashboard"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
@@ -116,14 +126,14 @@
                     </a>
                 </li> --}}
                 <li>
-                    <a href="{{ route('transaction') }}">
+                    <a href="{{ route('transaction') }}" class="active-transaction">
                         <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Transaction"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Transaction">Transaction</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}" id="log-out">
+                    <a href="{{ route('login') }}" id="log-out">
                         <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Logout">Logout</span>
@@ -135,52 +145,8 @@
 
         <div class="home-content">
 
-            <div class="text">Dashboard</div>
+            <div class="text">Transaction</div>
 
-            <div class="container-fluid px-4">
-                <div class="row g-3 my-2">
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">0</h3>
-                                    <p class="fs-5">Total Vehicles Parked</p>
-                                </div>
-                                <i class="fa fa-car" id="icon-1"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">0</h3>
-                                    <p class="fs-5">Users</p>
-                                </div>
-                                <i class="fa fa-user-circle" id="icon-2"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">{{ $parkslots }}</h3>
-                                    <p class="fs-5">Available Slots</p>
-                                </div>
-                                <i class="fa fa-map-marker" id="icon-3"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">0</h3>
-                                    <p class="fs-5">Parking Done Within 24 HRS</p>
-                                </div>
-                                <i class="fa fa-clock-o" id="icon-4"></i>
-                            </div>
-                        </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -199,7 +165,6 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
-
 </body>
 
 </html>

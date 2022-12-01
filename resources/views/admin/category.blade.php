@@ -4,13 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- DataTables --}}
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.1/af-2.5.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/cr-1.6.1/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.1/af-2.5.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/cr-1.6.1/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/datatables.min.js">
+    </script>
+    {{-- DataTables --}}
 
     {{-- Icon Tab --}}
     <link rel="icon" href="/img/logo.png">
 
-    <title>Smart Parking</title>
+    {{-- Ajax --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="icon" type="image/png" href="/img/favicon.ico" sizes="16x16">
+    <title>Smart Parking</title>
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -43,41 +54,18 @@
 
 <body>
     <!--Nav-->
-    <nav class="navbar navbar-light navbar-expand-lg justify-content-md-center custom-nav">
+    <nav class="navbar navbar-light navbar-expand-lg custom-nav">
         <span class="image">
             <a href="#">
                 <img src="{{ asset('img/logo.png') }}" id="image-text">
             </a>
         </span>
         <a class="navbar-brand" href="#" id="custom-park">Smart Parking System</a>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#nav-elements"
-            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="nav-elements">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('landing') }}">
-                        <i class="fa-solid fa-home icon"></i>
-                        Home <span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa fa-users"></i>
-                        <span class="text nav-text">About Us</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-sharp fa-solid fa-phone icon"></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <span id="nav-logout" class="ml-auto">
+            {{-- <i class='bx bx-log-out ml-auto'> --}}
+            <a href="#" class="ml-auto">Logout</a>
+            </i>
+        </span>
     </nav>
 
     <div class="d-flex" id="wrapper">
@@ -86,22 +74,30 @@
             <i class='bx bx-menu' id="btn"></i>
             <ul class="nav-list">
                 <li>
-                    <a href="{{ route('dashboard') }}">
-                        <i class='bx bxs-dashboard' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                    <a href="{{ route('admindash') }}">
+                        <i class='bx bxs-bar-chart-square' data-toggle="tooltip" data-placement="right"
+                            title="Dashboard"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Dashboard">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('category') }}" class="active-category">
-                        <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Vehicle Category">Vehicle
-                            Category</span>
+                    <a href="{{ route('manage') }}">
+                        <i class='bx bxs-cog' data-toggle="tooltip" data-placement="right" title="Parking"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right" title="Parking">Manage
+                            Parking</span>
                     </a>
                 </li>
+                {{-- <li>
+                    <a href="{{ route('category') }}" class="active-category">
+                        <i class='bx bxs-category' data-toggle="tooltip" data-placement="right"
+                            title="Vehicle Category"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Vehicle Category">Vehicle Category</span>
+                    </a>
+                </li> --}}
                 <li>
-                    <a href="{{ route('slot') }}">
+                    <a href="{{ route('parkslot') }}">
                         <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
                             title="Parking Slot"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
@@ -109,32 +105,10 @@
                             Slot</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('parking') }}">
-                        <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Dashboard">Parking</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Dashboard">Transaction</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="log-out">
-                        <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Logout">Logout</span>
-                    </a>
-                </li>
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
 
-        {{-- Home Contents --}}
         <div class="home-content">
 
             <div class="text">Vehicle Categories
@@ -144,8 +118,8 @@
             </div>
 
             {{-- Modal Properties --}}
-            <div class="modal fade" id="form" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header border-bottom-0">
@@ -159,30 +133,13 @@
                         <form>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="brand">Select Brand Name:</label>
-                                    <select class="form-control" id="brand">
-                                        <option value="" disabled selected>Select here</option>
-                                        <option>Toyota</option>
-                                        <option>Suzuki</option>
-                                        <option>Kia Motors</option>
-                                        <option>Mitsubishi Motors</option>
-                                        <option>Hyundai</option>
-                                        <option>Others</option>
-                                    </select>
-                                    <br>
-                                    <label for="type">Vehicle Type:</label>
-                                    <select class="form-control" id="type">
-                                        <option value="" disabled selected>Select here</option>
-                                        <option>Bicycle</option>
-                                        <option>Motorcycle</option>
-                                        <option>Motor Scooter</option>
-                                        <option>Micro</option>
-                                        <option>Sedan</option>
-                                        <option>VAN</option>
-                                        <option>SUV</option>
-                                        <option>Truck</option>
-                                        <option>Others</option>
-                                    </select>
+                                    <form>
+                                        <label for="brand">Brand Name:</label>
+                                        <input type="text" class="form-control" name="brand_name">
+                                        <br>
+                                        <label for="type">Vehicle Type:</label>
+                                        <input type="text" class="form-control" name="vehicle_type">
+                                    </form>
                                 </div>
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>
@@ -202,15 +159,15 @@
                     <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Brand Name</th>
-                                <th scope="col">Vehicle Type</th>
-                                <th scope="col">Actions</th>
+                                <th style="width: 10%">ID</th>
+                                <th style="width: 10%">Brand Name</th>
+                                <th style="width: 10%">Vehicle Type</th>
+                                <th style="width: 10%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th></th>
                                 <td></td>
                                 <td></td>
                                 <td>

@@ -84,7 +84,7 @@
             <i class='bx bx-menu' id="btn"></i>
             <ul class="nav-list">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="active-dashboard">
+                    <a href="{{ route('dashboard') }}">
                         <i class='bx bxs-bar-chart-square' data-toggle="tooltip" data-placement="right"
                             title="Dashboard"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
@@ -99,7 +99,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('user') }}">
+                    <a href="{{ route('users') }}" class="active-users">
                         <i class='bx bxs-user-account' data-toggle="tooltip" data-placement="right"
                             title="Vehicle Category"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
@@ -123,7 +123,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}" id="log-out">
+                    <a href="{{ route('login') }}" id="log-out">
                         <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Logout">Logout</span>
@@ -134,53 +134,8 @@
         <!--Sidebar Nav Ends-->
 
         <div class="home-content">
+            <div class="text">Users</div>
 
-            <div class="text">Dashboard</div>
-
-            <div class="container-fluid px-4">
-                <div class="row g-3 my-2">
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">0</h3>
-                                    <p class="fs-5">Total Vehicles Parked</p>
-                                </div>
-                                <i class="fa fa-car" id="icon-1"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">0</h3>
-                                    <p class="fs-5">Users</p>
-                                </div>
-                                <i class="fa fa-user-circle" id="icon-2"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">{{ $parkslots }}</h3>
-                                    <p class="fs-5">Available Slots</p>
-                                </div>
-                                <i class="fa fa-map-marker" id="icon-3"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div
-                                class="p-3 bg-white dash-card d-flex justify-content-around align-items-center rounded">
-                                <div>
-                                    <h3 class="fs-2">0</h3>
-                                    <p class="fs-5">Parking Done Within 24 HRS</p>
-                                </div>
-                                <i class="fa fa-clock-o" id="icon-4"></i>
-                            </div>
-                        </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -203,3 +158,4 @@
 </body>
 
 </html>
+

@@ -4,13 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- DataTables --}}
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.1/af-2.5.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/cr-1.6.1/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.13.1/af-2.5.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/b-print-2.3.3/cr-1.6.1/date-1.2.0/fc-4.2.1/fh-3.3.1/kt-2.8.0/r-2.4.0/rg-1.3.0/rr-1.3.1/sc-2.0.7/sb-1.4.0/sp-2.1.0/sl-1.5.0/datatables.min.js">
+    </script>
+    {{-- DataTables --}}
 
     {{-- Icon Tab --}}
     <link rel="icon" href="/img/logo.png">
 
     <title>Smart Parking</title>
-
-    <link rel="icon" type="image/png" href="/img/favicon.ico" sizes="16x16">
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -43,41 +51,18 @@
 
 <body>
     <!--Nav-->
-    <nav class="navbar navbar-light navbar-expand-lg justify-content-md-center custom-nav">
+    <nav class="navbar navbar-light navbar-expand-lg custom-nav">
         <span class="image">
             <a href="#">
                 <img src="{{ asset('img/logo.png') }}" id="image-text">
             </a>
         </span>
         <a class="navbar-brand" href="#" id="custom-park">Smart Parking System</a>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#nav-elements"
-            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="nav-elements">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('landing') }}">
-                        <i class="fa-solid fa-home icon"></i>
-                        Home <span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa fa-users"></i>
-                        <span class="text nav-text">About Us</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-sharp fa-solid fa-phone icon"></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <span id="nav-logout" class="ml-auto">
+            {{-- <i class='bx bx-log-out ml-auto'> --}}
+            <a href="#" class="ml-auto">Logout</a>
+            </i>
+        </span>
     </nav>
 
     <div class="d-flex" id="wrapper">
@@ -86,22 +71,31 @@
             <i class='bx bx-menu' id="btn"></i>
             <ul class="nav-list">
                 <li>
-                    <a href="{{ route('dashboard') }}">
-                        <i class='bx bxs-dashboard' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                    <a href="{{ route('admindash') }}">
+                        <i class='bx bxs-bar-chart-square' data-toggle="tooltip" data-placement="right"
+                            title="Dashboard"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Dashboard">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('category') }}">
-                        <i class='bx bx-user' data-toggle="tooltip" data-placement="right" title="Vehicle Category"></i>
+                    <a href="{{ route('manage') }}" class="active-manage">
+                        <i class='bx bxs-cog' data-toggle="tooltip" data-placement="right" title="Manage Parking"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Vehicle Category">Vehicle
-                            Category</span>
+                            title="Manage Parking">Manage
+                            Parking</span>
                     </a>
                 </li>
+                {{-- <li>
+                    <a href="{{ route('category') }}">
+                        <i class='bx bxs-category' data-toggle="tooltip" data-placement="right"
+                            title="Vehicle Category"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Vehicle Category">Vehicle Category</span>
+                    </a>
+                </li> --}}
                 <li>
-                    <a href="{{ route('slot') }}" class="active-slot">
+                    <a href="{{ route('parkslot') }}">
                         <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
                             title="Parking Slot"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
@@ -109,47 +103,26 @@
                             Slot</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('parking') }}">
-                        <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Dashboard">Parking</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Dashboard">Transaction</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="log-out">
-                        <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Logout">Logout</span>
-                    </a>
-                </li>
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
 
-        {{-- Home Contents --}}
         <div class="home-content">
 
-            <div class="text">Manage Slot
-                <button type="button" class="btn btn-outline-danger btn-sm font-weight-bold" data-toggle="modal"
+            <div class="text">Manage Parking
+                {{-- <button type="button" class="btn btn-outline-dark btn-sm font-weight-bold" data-toggle="modal"
                     data-target="#form">
-                    Add Slot
+                    Add Parking
+                </button> --}}
             </div>
 
-            {{-- Modal Properties --}}
+            {{-- Modal Properties
             <div class="modal fade" id="form" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header border-bottom-0">
-                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Add Slot</h5>
+                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Add Parking</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -157,14 +130,20 @@
                         <form>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="slotName">Slot Name:</label>
+                                    <label for="slotName">Slot:</label>
                                     <input type="text" class="form-control" id="slot1"
                                         aria-describedby="emailHelp" placeholder="Enter here">
                                 </div>
                                 <div class="form-group">
-                                    <label for="status">Status:</label>
+                                    <label for="category">Category:</label>
                                     <select class="form-control" id="status">
-                                        <option value="" disabled selected>Active</option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rate">Rate:</label>
+                                    <select class="form-control" id="status">
+                                        <option></option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-success">Submit</button>
@@ -173,35 +152,38 @@
                     </div>
                 </div>
             </div>
-            {{-- End of Modal Properties --}}
+            End of Modal Properties --}}
 
-            {{-- Menu Card --}}
             <div class="card custom-card">
-                <p class="custom-text">Manage Slot</p>
+                {{-- <p class="custom-text">Manage Parking</p> --}}
                 <div class="card-body">
 
                     {{-- Table Contents --}}
                     <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
-                                <th>#</th>
-                                <th>Slot Name</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th style="width: 15%">Slot ID</th>
+                                <th style="width: 20%">Registered Vehicle Owner</th>
+                                <th style="width: 15%">Vehicle Brand</th>
+                                <th style="width: 15%">Vehicle Type</th>
+                                <th style="width: 15%">Plate Number</th>
+                                <th style="width: 15%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <th></th>
                                 <td></td>
-                                <td class="font-weight-bold text-success"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
-                                    <button type="button" class="btn btn-outline-success btn-sm"
-                                        data-toggle="tooltip" data-placement="right" title="Edit">
+                                    <button type="button" class="btn btn-outline-success btn-sm" data-toggle="tooltip"
+                                        data-placement="right" title="Edit">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </button>
-                                    <button type="button" class="btn btn-outline-danger btn-sm"
-                                        data-toggle="tooltip" data-placement="right" title="Delete">
+                                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="tooltip"
+                                        data-placement="right" title="Delete">
                                         <i class="fa fa-trash-o"></i>
                                     </button>
                                 </td>
@@ -212,22 +194,24 @@
 
                 </div>
             </div>
-            {{-- End of Menu Card --}}
-
         </div>
-        {{-- End of Home Contents --}}
+    </div>
 
 
-        <script>
-            //Dashboard Toggler
-            let btn = document.querySelector("#btn");
-            let sidebar = document.querySelector(".sidebar");
 
-            btn.onclick = function() {
-                sidebar.classList.toggle("active");
+    <script>
+        //Dashboard Toggler
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
 
-            } //Dashboard Toggler
-        </script>
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+
+        } //Dashboard Toggler
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 
 </html>

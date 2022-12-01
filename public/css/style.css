@@ -16,8 +16,8 @@ body {
 /*Nav Shadow*/
 .custom-nav {
     /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
-    border-bottom: 0.0625rem solid #e0e0e0;
-    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4); */
+    /* border-bottom: 0.0625rem solid #e0e0e0; */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 /*Nav Shadow*/
@@ -64,6 +64,19 @@ body {
 
 /*Logo Properties*/
 
+#nav-logout a{
+    color: rgb(0, 0, 0);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 200;
+}
+
+#nav-logout a:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: rgb(222, 111, 14);
+}
 #nav-elements a {
     color: rgb(0, 0, 0);
     transition: all 0.4s ease;
@@ -132,8 +145,8 @@ body {
     padding-top: 20px;
     padding: 6px 14px;
     transition: all 0.5s ease;
-    border-right: 0.0625rem solid #e0e0e0;
-    /* box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.418); */
+    margin-right: 20px;
+    box-shadow: 7px 0 5px -5px rgba(0, 0, 0, 0.418);
     /* box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418) !important; */
 }
 
@@ -228,6 +241,19 @@ body {
     color: rgb(222, 111, 14);
 }
 
+.sidebar .active-transaction {
+    font-weight: bold;
+    color: rgb(222, 111, 14);
+}
+
+.sidebar .active-manage {
+    font-weight: bold;
+    color: rgb(222, 111, 14);
+}
+.sidebar .active-users {
+    font-weight: bold;
+    color: rgb(222, 111, 14);
+}
 /* Active links */
 
 .sidebar #log-out {

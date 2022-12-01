@@ -10,7 +10,7 @@ body {
     /*background-image: url("../img/bg.png");*/
     /* background-image: linear-gradient(90deg, rgb(244, 145, 232), rgb(61, 5, 221)); */
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
+	background-size: 2000% 2000%;
 	animation: gradient 8s ease infinite;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;

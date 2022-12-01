@@ -32,3 +32,17 @@
     box-shadow: 0 .150rem .50rem rgba(0, 0, 0, 0.418)!important;
     border-radius: 20px;
 }
+#custom-park {
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+
+}
+.image-text {
+    padding: 0;
+    width: 50px;
+    border-radius: 50px;
+}
+.image {
+    min-width: auto;
+    align-items: center;
+}

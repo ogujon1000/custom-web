@@ -37,20 +37,18 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card text-dark custom-signup">
                     <div class="card-body p-5 text-center">
-                        {{-- <form action="{{ route('save') }}" method="post">
+                        <form method="POST" action="{{ route('save') }}">
                             @if (Session::get('success'))
                                 <div class="alert alert-success">
                                     {{ Session::get('success') }}
                                 </div>
                             @endif
-
                             @if (Session::get('fail'))
                                 <div class="alert alert-danger">
                                     {{ Session::get('fail') }}
                                 </div>
                             @endif
-
-                            @csrf --}}
+                            @csrf
                             <div class="mb-md-5 mt-md-4">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
@@ -59,44 +57,44 @@
                                     <label class="form-label" for="email">Email</label>
                                     <input type="email" class="form-control form-control-lg" name="email"
                                         value="{{ old('email') }}" />
-                                    {{-- <span class="text-danger">
+                                    <span class="text-danger">
                                         @error('email')
                                             {{ $message }}
                                         @enderror
-                                    </span> --}}
+                                    </span>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="name">Name</label>
                                     <input type="text" class="form-control form-control-lg" name="name"
                                         value="{{ old('name') }}">
-                                    {{-- <span class="text-danger">
+                                    <span class="text-danger">
                                         @error('name')
                                             {{ $message }}
                                         @enderror
-                                    </span> --}}
+                                    </span>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="password">Password</label>
                                     <input type="password" class="form-control form-control-lg" name="password"
                                         value="{{ old('password') }}">
-                                    {{-- <span class="text-danger">
+                                    <span class="text-danger">
                                         @error('password')
                                             {{ $message }}
                                         @enderror
-                                    </span> --}}
+                                    </span>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="password">Confirm Password</label>
                                     <input type="password" class="form-control form-control-lg" name="password2"
                                         value="{{ old('password') }}">
-                                    {{-- <span class="text-danger">
+                                    <span class="text-danger">
                                         @error('password')
                                             {{ $message }}
                                         @enderror
-                                    </span> --}}
+                                    </span>
                                 </div>
 
                                 <button class="btn btn-outline-dark btn-lg px-5" type="submit">Register</button>
@@ -104,10 +102,11 @@
                             </div>
 
                             <div>
-                                <p class="mb-0">Already have an account? <a href="{{ route('signin') }}"
+                                <p class="mb-0">Already have an account? <a href="{{ route('login') }}"
                                         class="text-dark-50 fw-bold">Login</a>
                                 </p>
                             </div>
+                        </form>
                         {{-- </form> --}}
                     </div>
                 </div>

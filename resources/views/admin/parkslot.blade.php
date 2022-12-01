@@ -19,6 +19,9 @@
     <link rel="icon" href="/img/logo.png">
 
     <title>Smart Parking</title>
+    {{-- Ajax --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/d4492f0e4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -51,41 +54,18 @@
 
 <body>
     <!--Nav-->
-    <nav class="navbar navbar-light navbar-expand-lg justify-content-md-center custom-nav">
+    <nav class="navbar navbar-light navbar-expand-lg custom-nav">
         <span class="image">
             <a href="#">
                 <img src="{{ asset('img/logo.png') }}" id="image-text">
             </a>
         </span>
         <a class="navbar-brand" href="#" id="custom-park">Smart Parking System</a>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#nav-elements"
-            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="nav-elements">
-            <ul class="navbar-nav">
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{ route('landing') }}">
-                        <i class="fa-solid fa-home icon"></i>
-                        Home <span class="sr-only">(current)</span></a>
-                </li> --}}
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa fa-users"></i>
-                        <span class="text nav-text">About Us</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-sharp fa-solid fa-phone icon"></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <span id="nav-logout" class="ml-auto">
+            {{-- <i class='bx bx-log-out ml-auto'> --}}
+            <a href="#" class="ml-auto">Logout</a>
+            </i>
+        </span>
     </nav>
 
     <div class="d-flex" id="wrapper">
@@ -94,7 +74,7 @@
             <i class='bx bx-menu' id="btn"></i>
             <ul class="nav-list">
                 <li>
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('admindash') }}">
                         <i class='bx bxs-bar-chart-square' data-toggle="tooltip" data-placement="right"
                             title="Dashboard"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
@@ -102,50 +82,42 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('parking') }}" class="active-parking">
-                        <i class='bx bxs-parking' data-toggle="tooltip" data-placement="right" title="Parking"></i>
+                    <a href="{{ route('manage') }}">
+                        <i class='bx bxs-cog' data-toggle="tooltip" data-placement="right" title="Manage Parking"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Parking">Parking</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('user') }}">
-                        <i class='bx bxs-user-account' data-toggle="tooltip" data-placement="right"
-                            title="Vehicle Category"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Vehicle Category">Users</span>
+                            title="Manage Parking">Manage
+                            Parking</span>
                     </a>
                 </li>
                 {{-- <li>
-                    <a href="{{ route('slot') }}">
+                    <a href="{{ route('category') }}">
+                        <i class='bx bxs-category' data-toggle="tooltip" data-placement="right"
+                            title="Vehicle Category"></i>
+                        <span class="links-name" data-toggle="tooltip" data-placement="right"
+                            title="Vehicle Category">Vehicle Category</span>
+                    </a>
+                </li> --}}
+                <li>
+                    <a href="{{ route('parkslot') }}" class="active-slot">
                         <i class='bx bxs-car-garage' data-toggle="tooltip" data-placement="right"
                             title="Parking Slot"></i>
                         <span class="links-name" data-toggle="tooltip" data-placement="right"
                             title="Parking Slot">Parking
                             Slot</span>
                     </a>
-                </li> --}}
-                <li>
-                    <a href="{{ route('transaction') }}">
-                        <i class='bx bx-data' data-toggle="tooltip" data-placement="right" title="Transaction"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Transaction">Transaction</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('login') }}" id="log-out">
-                        <i class='bx bx-log-out' data-toggle="tooltip" data-placement="right" title="Logout"></i>
-                        <span class="links-name" data-toggle="tooltip" data-placement="right"
-                            title="Logout">Logout</span>
-                    </a>
                 </li>
             </ul>
         </div>
         <!--Sidebar Nav Ends-->
 
+        {{-- Home Contents --}}
         <div class="home-content">
 
-            <div class="text">Start Parking</div>
+            <div class="text">Manage Slot
+                <button type="button" class="btn btn-outline-danger btn-sm font-weight-bold" data-toggle="modal"
+                    data-target="#form">
+                    Add Slot
+            </div>
 
             {{-- Modal Properties --}}
             <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -153,34 +125,37 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header border-bottom-0">
-                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Booking</h5>
+                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Add Slot</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form>
+
+                        <form method="post" action="{{ url('insert-slot') }}">
+                            {{ csrf_field() }}
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label>Name:</label>
-                                    <input type="text" class="form-control" placeholder="Enter here">
+                                    <label for="slotNumber">Slot Number:</label>
+                                    <input class="form-control" name="slotNumber">
                                 </div>
                                 <div class="form-group">
-                                    <label>Phone Number:</label>
-                                    <input type="text" class="form-control" placeholder="Enter here">
+                                    <label for="slotName">Slot Name:</label>
+                                    <input class="form-control" name="slotName">
                                 </div>
                                 <div class="form-group">
-                                    <label>Plate Number:</label>
-                                    <input type="text" class="form-control" placeholder="Enter here">
+                                    <label for="parkRate">Parking Rate:</label>
+                                    <input class="form-control" name="parkRate">
                                 </div>
                                 <div class="form-group">
-                                    <label>Vehicle Type:</label>
-                                    <input type="text" class="form-control" placeholder="Enter here">
+                                    <label for="status">Status:</label>
+                                    <select class="form-control" name="parkStatus">
+                                        <option value="" disabled selected>Select Status</option>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <label>Vehicle Brand:</label>
-                                    <input type="text" class="form-control" placeholder="Enter here">
-                                </div>
-                                <button type="submit" class="btn btn-success btn-block">Book Parking</button>
+
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -188,58 +163,66 @@
             </div>
             {{-- End of Modal Properties --}}
 
+            {{-- Menu Card --}}
             <div class="card custom-card">
-                {{-- <p class="custom-text">Manage Parking</p> --}}
+                <p class="custom-text">Manage Slot</p>
+
                 <div class="card-body">
+                    @if (Session('success'))
+                        <div class="alert alert-success">
+                            {{ Session('success') }}
+                        </div>
+                    @endif
                     {{-- Table Contents --}}
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="park_table">
                         <thead class="thead-dark">
                             <tr>
-                                <th style="width: 25%">Available Slot</th>
-                                <th style="width: 25%">Parking Rate</th>
-                                <th style="width: 25%">Status</th>
-                                <th style="width: 25%">Action</th>
+                                <th style="width: 15%">ID</th>
+                                <th style="width: 15%">Slot Name</th>
+                                <th style="width: 15%">Rates</th>
+                                <th style="width: 15%">Status</th>
+                                <th style="width: 15%">Actions</th>
                             </tr>
+
                         </thead>
                         <tbody>
-                            @foreach ($parking as $parkslots)
-                            <tr>
-                                <th>{{ $parkslots->slotName }}</th>
-                                <td>{{ $parkslots->parkRate }}</td>
-                                <td>{{ $parkslots->parkStatus }}</td>
-                                <td>
-                                    <button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal"
-                                        data-target="#form">
-                                        <i class="fa fa-book"></i>
-                                        Start Booking
-                                    </button>
-                                </td>
-                            </tr>
+                            @foreach ($parkslots as $item)
+                                <tr>
+                                    <th>{{ $item->slotNumber }}</th>
+                                    <td>{{ $item->slotName }}</td>
+                                    <td>{{ $item->parkRate }}</td>
+                                    <td class="font-weight-bold text-success">{{ $item->parkStatus }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-success btn-sm"
+                                            data-toggle="tooltip" data-placement="right" title="Edit">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"
+                                            data-toggle="tooltip" data-placement="right" title="Delete">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
                     {{-- End of Table Contents --}}
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
 
 
 
-    <script>
-        //Dashboard Toggler
-        let btn = document.querySelector("#btn");
-        let sidebar = document.querySelector(".sidebar");
+                    <script>
+                        //Dashboard Toggler
+                        let btn = document.querySelector("#btn");
+                        let sidebar = document.querySelector(".sidebar");
 
-        btn.onclick = function() {
-            sidebar.classList.toggle("active");
+                        btn.onclick = function() {
+                            sidebar.classList.toggle("active");
 
-        } //Dashboard Toggler
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
+                        } //Dashboard Toggler
+                        $(function() {
+                            $('[data-toggle="tooltip"]').tooltip()
+                        })
+                    </script>
 </body>
 
 </html>

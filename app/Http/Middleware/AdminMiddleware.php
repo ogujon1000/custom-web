@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class AuthCheck
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,12 +17,10 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('LoggedUser') && ($request->path() !='users/login' && $request->path() !='users/register')){
-            return redirect('users/login')->with('fail','You must be logged in!');
+        if (Auth::custom_auths()->user_type == 'Administrator') {
+            return $next($request);
+        } else {
+            return redirect('/layout/dashboard');
         }
-        if(session()->has('LoggedUser') && ($request->path() == 'users/login' || $request->path() == 'users/register')){
-            return back();
-        }
-        return $next($request);
     }
 }
